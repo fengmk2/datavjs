@@ -12,7 +12,8 @@
   "license": "MIT",
   "description": "DataV.js is a JavaScript library for data visualization",
   "dependencies": {
-    "anywhere": "*"
+    "anywhere": "*",
+    "snyk": "^1.17.5"
   },
   "devDependencies": {
     "uglify-js": "*"
@@ -20,7 +21,9 @@
   "scripts": {
     "start": "node ./node_modules/datavjs/node_modules/.bin/anywhere 8888",
     "build": "node bin/build.js",
-    "prepublish": "npm run build"
+    "prepublish": "npm run snyk-protect && npm run build",
+    "snyk-protect": "snyk protect"
   },
-  "tracker": "UA-17170593-4"
+  "tracker": "UA-17170593-4",
+  "snyk": true
 }
